@@ -8,6 +8,7 @@
 *.qcow2
 *.zip
 *.o
+*.cmd
 /oscourse/linux-stable/*
 !/oscourse/linux-stable/cs300
 !/oscourse/linux-stable/Makefile
