@@ -2,7 +2,7 @@
 # by Brian Fraser
 
 # Edit this file to compile extra C files into their own programs.
-TARGET=cs300_testapp array_stats_test process_ancestor_test
+TARGET=cs300_testapp array_stats_test test_array_stats process_ancestor_test
 QEMU_LAUNCH_DIR=../../../linux-stable/
 
 CC_C = gcc
