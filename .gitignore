@@ -1,4 +1,10 @@
 .DS_Store
+.cocciconfig
+.mailmap
+.gitattributes
+.gitignore
+!/.gitattributes
+!/gitignore
 *.qcow2
 *.zip
 /oscourse/linux-stable/*
