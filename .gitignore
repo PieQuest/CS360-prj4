@@ -3,6 +3,8 @@
 .mailmap
 .gitattributes
 .gitignore
+modules.builtin
+modules.order
 !/.gitattributes
 !/gitignore
 *.qcow2
