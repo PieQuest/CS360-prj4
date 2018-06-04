@@ -1,2 +1,7 @@
 .DS_Store
-
+*.qcow2
+*.zip
+/oscourse/linux-stable/*
+!/oscourse/linux-stable/cs300
+!/oscourse/linux-stable/arch/x86/entry/syscalls/syscall_32.tbl
+!/oscourse/linux-stable/arch/x86/entry/syscalls/syscall_64.tbl
