@@ -10,7 +10,7 @@
 #include "array_stats.h"
 
 // Sys-call number:
-#define _ARRAY_STATS_ 331
+#define _ARRAY_STATS_ 341
 
 /**
  * Prototypes

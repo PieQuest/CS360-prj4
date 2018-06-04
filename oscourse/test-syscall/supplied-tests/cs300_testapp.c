@@ -3,9 +3,9 @@
 #include <sys/syscall.h>
 
 #if _LP64 == 1
-#define _CS300_TEST_ 330
+#define _CS300_TEST_ 340
 #else
-#define _CS300_TEST_ 360
+#define _CS300_TEST_ 390
 #endif
 int main(int argc, char *argv[])
 {
