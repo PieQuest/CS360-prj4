@@ -1,0 +1,8 @@
+Marking Process:
+
+- Compile kernel and launch QEMU
+- Log-in as root (required for userID test)
+- Compile test apps
+- Transfer to QEMU:
+	make transfer
+- Run each test.

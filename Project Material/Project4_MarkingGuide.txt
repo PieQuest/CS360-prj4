@@ -1,0 +1,42 @@
+Project 4 Marking Guide
+
+Assignment must be done individually or in pairs.
+(no difference in marking)
+
+Total =  [100] marks.
+
+
+
+[40] Array Statistics Sys-Call
+    - Correctly fills the *stats struct.
+    - Correctly returns 0 when successful
+    - Correctly returns -EINVAL and -EFAULT appropriately.
+    - Does not use a huge amount of kernel memory.
+    - Extensive testing may be done by automated tests.
+
+[50] Process Ancestors Sys-call
+    - Correctly fill array of structures with process information.
+    - Correctly calculate number of children and siblings.
+    - Correctly returns 0 when successful
+    - Correctly returns -EINVAL and -EFAULT appropriately.
+    - Does not use a huge amount of kernel memory.
+    - Extensive testing may be done by automated tests.
+
+[5] Ancestors User-Mode Testing
+    - Correctly builds via Makefile, transfers to QEMU via "transfer" target.
+    - Reasonable test program to exercise the syscall.
+    - Must at least test some error conditions (bad pointers, ...)
+
+[5] Good code quality
+    - Kernel patch must correctly apply otherwise significant mark penalty is possible (>5 penalty)
+    - Near perfect indentation and great code structure.
+    - Code which does not compile will receive 0 marks total.
+    - Reasonable names for variables and functions.
+
+
+Forward to Dr. Rrushi if:
+- Material is suspiciously similar to another submission or code posted online.
+
+Marking Note: 
+- Updates to the syscall_64.tbl file trigger full kernel rebuild.
+  Copy out "golden" copy, and copy back in with: "cp -p ..." to preserve the timestamp.

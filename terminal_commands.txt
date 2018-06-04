@@ -1,0 +1,13 @@
+git clone git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
+
+
+gedit arch/x86/entry/syscalls/syscall_64.tbl
+
+
+qemu-system-x86_64 -m 64M -hda ../debian_squeeze_amd64_standard.qcow2 -append "root=/dev/sda1 console=tty0 console=ttyS0,115200n8" -kernel arch/x86/boot/bzImage -nographic -net nic,vlan=1 -net user,vlan=1 -redir tcp:2222::22
+
+
+scp -P 2222 process_ancestors_test root@localhost:~
+
+
+gcc -std=c99 -D _GNU_SOURCE -static process_ancestors_test.c -o process_ancestors_test
