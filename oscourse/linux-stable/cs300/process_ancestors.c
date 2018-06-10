@@ -78,7 +78,7 @@ asmlinkage long sys_process_ancestors(struct process_info info_array[], long siz
 		copy_to_user(info_array[i], &process, sizeof(process));
 		*/
 		
-		if (copy_to_user(info_array[i], &process, sizeof(process)))
+		if (copy_to_user(&info_array[i], &process, sizeof(process)))
 		{
 			return -EFAULT;
 		}
