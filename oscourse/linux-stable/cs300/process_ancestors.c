@@ -61,7 +61,15 @@ asmlinkage long sys_process_ancestors(struct process_info info_array[], long siz
         process.num_siblings = count_sibling;
         //printk("Process num_children: %ld\n", process.num_children);
 
-        info_array[i] = process;
+        //info_array[i] = process;
+		
+		/*
+	    copy_from_user(tmp, buff, len);
+	    //change tmp here
+	    copy_to_user( buff, &tmp, len );
+		*/
+		
+		copy_to_user(process, &info_array[], sizeof(info_array[]));
         i++;
 
     }
