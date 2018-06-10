@@ -12,7 +12,7 @@
 #include "process_ancestors.h"
 
 
-asmlinkage long sys_process_ancestors(struct process_info info_array[], long size, long *num_filled);
+//asmlinkage long sys_process_ancestors(struct process_info info_array[], long size, long *num_filled);
 
 asmlinkage long sys_process_ancestors(struct process_info info_array[], long size, long *num_filled) {
     struct process_info process;
@@ -69,19 +69,14 @@ asmlinkage long sys_process_ancestors(struct process_info info_array[], long siz
         process.num_siblings = count_sibling;
         //printk("Process num_children: %ld\n", process.num_children);
 
-        //info_array[i] = process;
-		
 		/*
-	    copy_from_user(tmp, buff, len);
-	    //change tmp here
-	    copy_to_user( buff, &tmp, len );
-		copy_to_user(info_array[i], &process, sizeof(process));
-		*/
-		
 		if (copy_to_user(&info_array[i], &process, sizeof(process)))
 		{
 			return -EFAULT;
 		}
+		*/
+		
+        info_array[i] = process;
 		
         i++;
 
