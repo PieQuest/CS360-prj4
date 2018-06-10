@@ -8,7 +8,7 @@
 #include <asm-generic/errno-base.h>
 #include <linux/errno.h>
 #include <linux/string.h>
-#include <stdlib.h>
+#include <linux/stdlib.h>
 
 #include "process_ancestors.h"
 
