@@ -6,7 +6,7 @@
 asmlinkage long sys_array_stats(struct array_stats *stats, long data[], long size) {
 	struct array_stats copied = {10000000, 0, 0};
 	long dataCopied = 0;
-	long result = 0;
+	// result = 0;
 	long count = 0;
 	
 	if (copy_from_user(&copied.min, &data[0], sizeof(data[count])))
@@ -71,5 +71,5 @@ asmlinkage long sys_array_stats(struct array_stats *stats, long data[], long siz
 	//printk("--STATSmax %ld\n", stats->max);
 	//printk("--STATSmax %ld\n", stats->sum);
 	
-	return result;
+	return 0;
 }

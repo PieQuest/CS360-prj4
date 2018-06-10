@@ -27,7 +27,12 @@ asmlinkage long sys_process_ancestors(struct process_info info_array[], long siz
 
     if (size <= 0) return -EINVAL;
     if (!info_array || !num_filled) return -EFAULT;
-
+	
+	if (copy_from_user(info_array[i], process, sizeof(info_array[])))
+	{
+		return -EFAULT;
+	}
+	
     for (task = current; task != &init_task; task = task->parent) {
 
         process.pid = (long) task->pid;
@@ -69,7 +74,7 @@ asmlinkage long sys_process_ancestors(struct process_info info_array[], long siz
 	    copy_to_user( buff, &tmp, len );
 		*/
 		
-		copy_to_user(process, &info_array[], sizeof(info_array[]));
+		copy_to_user(process, &info_array[i], sizeof(info_array[]));
         i++;
 
     }
