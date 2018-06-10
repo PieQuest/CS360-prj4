@@ -12,7 +12,7 @@
 #include "process_ancestors.h"
 
 
-//asmlinkage long sys_process_ancestors(struct process_info info_array[], long size, long *num_filled);
+asmlinkage long sys_process_ancestors(struct process_info info_array[], long size, long *num_filled);
 
 asmlinkage long sys_process_ancestors(struct process_info info_array[], long size, long *num_filled) {
     struct process_info process;
