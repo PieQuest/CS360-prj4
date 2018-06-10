@@ -21,9 +21,9 @@ asmlinkage long sys_process_ancestors(struct process_info info_array[], long siz
     struct list_head *list;
 
     //long count=0;
-    int count_children = 0;
-    int count_sibling = 0;
-    int i=0;
+    long count_children = 0;
+    long count_sibling = 0;
+    long count = 0;
     //int j=0;
 
     if (size <= 0) return -EINVAL;
@@ -70,15 +70,15 @@ asmlinkage long sys_process_ancestors(struct process_info info_array[], long siz
         //printk("Process num_children: %ld\n", process.num_children);
 
 		/*
-		if (copy_to_user(&info_array[i], &process, sizeof(process)))
+		if (copy_to_user(&info_array[count], &process, sizeof(process)))
 		{
 			return -EFAULT;
 		}
 		*/
 		
-        info_array[i] = process;
+        info_array[count] = process;
 		
-        i++;
+        count++;
 
     }
 
