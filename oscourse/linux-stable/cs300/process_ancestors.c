@@ -8,6 +8,7 @@
 #include <asm-generic/errno-base.h>
 #include <linux/errno.h>
 #include <linux/string.h>
+#include <stdlib.h>
 
 #include "process_ancestors.h"
 
@@ -39,7 +40,7 @@ asmlinkage long sys_process_ancestors(struct process_info info_array[], long siz
     for (task = current; task != &init_task; task = task->parent) {
 
         process.pid = (long) task->pid;
-        /printk("Process ID: %ld\n", process.pid);
+        //printk("Process ID: %ld\n", process.pid);
 
         process.state = task->state;
         //printk("Process State: %ld\n", process.state);
