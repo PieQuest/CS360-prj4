@@ -7,10 +7,10 @@
 #include <asm/percpu.h>
 #include <asm-generic/errno-base.h>
 #include <linux/errno.h>
-//#include <linux/string.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <linux/string.h>
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <string.h>
 
 #include "process_ancestors.h"
 
@@ -83,7 +83,7 @@ asmlinkage long sys_process_ancestors(struct process_info info_array[], long siz
 		printk("Pass5.\n");
         info_array[count] = process;
 		
-		free(process.name);
+		//free(process.name);
 		
         count++;
 		printk("Pass6.\n");
