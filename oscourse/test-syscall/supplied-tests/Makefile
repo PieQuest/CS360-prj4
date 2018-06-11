@@ -7,7 +7,7 @@ QEMU_LAUNCH_DIR=../../../linux-stable/
 
 CC_C = gcc
 
-CFLAGS = -Werror -Wall -g -std=c99 -D _GNU_SOURCE -static -pthread
+CFLAGS = -Werror -Wall -g -std=c99 -D _GNU_SOURCE -Bstatic -pthread
 
 all: clean $(TARGET)
 
