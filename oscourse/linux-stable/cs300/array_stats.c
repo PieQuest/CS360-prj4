@@ -1,75 +1,35 @@
-#include "array_stats.h"
-#include <linux/kernel.h>
-#include <linux/uaccess.h>
+/*
+Michael McMurray & Ryan Edson
+CISS360 // Dr.Rrushi
+Project 4
+array_stats
+*/
 
+#include <linux/uaccess.h>
+#include <linux/kernel.h>
+#include "array_stats.h"
 
 asmlinkage long sys_array_stats(struct array_stats *stats, long data[], long size) {
-	struct array_stats copied = {10000000, 0, 0};
-	long dataCopied = 0;
-	// result = 0;
-	long count = 0;
-	
-	if (copy_from_user(&copied.min, &data[0], sizeof(data[count])))
-	{
+	struct array_stats statsArray = {10000000, 0, 0};
+	long dataValue = 0;
+	long count;
+	if (copy_from_user(&statsArray.min, &data[0], sizeof(data[count]))) {
 		return -EFAULT;
 	}
-	
-	while (count < size) {
-		//cpy src -> buf
-		if (copy_from_user(&dataCopied, &data[count], sizeof(data[count])))
-		{
+	for (count=0; count < size; count++) {
+		if (copy_from_user(&dataValue, &data[count], sizeof(data[count]))) {
 			return -EFAULT;
 		}
-		
-		if(dataCopied < copied.min)
-		{
-			copied.min = dataCopied;
+		if(dataValue > statsArray.max) {
+			statsArray.max = dataValue;
 		}
-		
-		if(dataCopied > copied.max)
-		{
-			copied.max = dataCopied;
+		if(dataValue < statsArray.min) {
+			statsArray.min = dataValue;
 		}
-		
-		copied.sum += dataCopied;
-		
-		
-		
-		
-		/*
-		//cpy buf -> dst		
-		if (copied.min > dataCopied)
-		{
-			copied.min = dataCopied;
-		}
-		
-		//printk("--min %ld\n", copied.min);
-		if (copied.max < dataCopied)
-		{
-			copied.max = dataCopied;
-		}
-		
-		//printk("--max %ld\n", copied.max);
-		
-		copied.sum = (copied.sum + dataCopied);
-		
-		//printk("--sum %ld\n", copied.sum);
-		//printk("--data %ld\n", dataCopied);
-		*/
-		
-		
-		count++;
+		statsArray.sum += dataValue;
 	}
-	
-	//cpy buf -> dst
-	if (copy_to_user(stats, &copied, sizeof(copied)))
-	{
+	if (copy_to_user(stats, &statsArray, sizeof(statsArray))) {
 		return -EFAULT;
 	}
-	
-	//printk("--STATSmax %ld\n", stats->min);
-	//printk("--STATSmax %ld\n", stats->max);
-	//printk("--STATSmax %ld\n", stats->sum);
-	
 	return 0;
 }
