@@ -1,0 +1,96 @@
+
+Test 1: ..Diving to kernel level
+..Rising to user level w/ result = 0
+Stats: min = 1, max = 1, sum = 1
+
+Test 2: ..Diving to kernel level
+..Rising to user level w/ result = 0
+Stats: min = 1, max = 2, sum = 3
+
+Test 3: ..Diving to kernel level
+..Rising to user level w/ result = 0
+Stats: min = 1, max = 3, sum = 6
+
+Test 4: ..Diving to kernel level
+..Rising to user level w/ result = 0
+Stats: min = 0, max = 6, sum = 12
+
+Test 5: ..Diving to kernel level
+..Rising to user level w/ result = 0
+Stats: min = 1, max = 5, sum = 13
+
+Test 6: ..Diving to kernel level
+..Rising to user level w/ result = 0
+Stats: min = -1, max = 0, sum = -1
+-------> ERROR   22: test on line 207 failed: stats.max == find_max(data, size)
+
+Test 7: ..Diving to kernel level
+..Rising to user level w/ result = 0
+Stats: min = -2, max = 0, sum = -3
+-------> ERROR   25: test on line 207 failed: stats.max == find_max(data, size)
+
+Test 8: ..Diving to kernel level
+..Rising to user level w/ result = 0
+Stats: min = -1, max = 3, sum = 4
+
+Test 9: ..Diving to kernel level
+..Rising to user level w/ result = 0
+Stats: min = -6, max = 4, sum = -4
+
+Test 10: ..Diving to kernel level
+..Rising to user level w/ result = 0
+Stats: min = -2147480021, max = 2147477011, sum = 327904356696
+
+Test 11: ..Diving to kernel level
+..Rising to user level w/ result = 0
+Stats: min = -2147481194, max = 2147481384, sum = -1504657126764
+
+Test 12: ..Diving to kernel level
+..Rising to user level w/ result = 0
+Stats: min = -2147482567, max = 2147479881, sum = 599700657034
+
+Test 13: ..Diving to kernel level
+..Rising to user level w/ result = 0
+Stats: min = -2147483025, max = 2147482312, sum = -14281301134
+
+Test 14: ..Diving to kernel level
+..Rising to user level w/ result = 0
+Stats: min = -2147483611, max = 2147482359, sum = -685491028913
+
+Test 15: ..Diving to kernel level
+..Rising to user level w/ result = 0
+-------> ERROR   54: test on line 213 failed: result == ret_code
+
+Test 16: ..Diving to kernel level
+..Rising to user level w/ result = 0
+-------> ERROR   54: test on line 213 failed: result == ret_code
+
+Test 17: ..Diving to kernel level
+..Rising to user level w/ result = 0
+-------> ERROR   54: test on line 213 failed: result == ret_code
+
+Test 18: ..Diving to kernel level
+..Rising to user level w/ result = -1, errno = 14
+
+Test 19: ..Diving to kernel level
+..Rising to user level w/ result = -1, errno = 14
+
+Test 20: ..Diving to kernel level
+..Rising to user level w/ result = -1, errno = 14
+
+Test 21: ..Diving to kernel level
+..Rising to user level w/ result = -1, errno = 14
+
+Test 22: ..Diving to kernel level
+..Rising to user level w/ result = -1, errno = 14
+
+Test 23: ..Diving to kernel level
+..Rising to user level w/ result = -1, errno = 14
+
+Test 24: ..Diving to kernel level
+..Rising to user level w/ result = -1, errno = 14
+
+Execution finished.
+  61/66 tests passed.
+   5/66 tests FAILED.
+   5/24 unique sys-call testing configurations FAILED.
